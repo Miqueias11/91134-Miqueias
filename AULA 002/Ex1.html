@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalhando com Tabelas</title>
+</head>
+<body>
+    <style>
+        /*para selecionar uma classe coloca-se o . primeiro e o nome da classe*/
+        .tabela1{
+            background-color: darkgray;
+        }
+
+        .linha-tabela2{
+            background-color: darkgray;
+        }
+
+        .linha-tabela3{
+            background-color: rgb(137, 136, 136);
+        }
+
+        .cabtab3{
+            background-color: rgb(192, 192, 192);
+        }
+    </style>
+    <h1>Tabelas no HTML</h1>
+    <br>
+        <table border="1px" class="tabela1"> <!-- Cria uma tabela -->
+            <thead><!-- Cabeçalho da tabela-->
+                <tr> <!-- Linha da tabela -->
+                    NOME
+                </tr>
+                <tr>
+                    TEL
+                </tr>
+                <tr>
+                    E-MAIL
+                </tr>
+                <thead> <!-- Cabeçalho da tabela-->
+                    <tbody>
+                        <tr> <!-- Linha da tabela -->
+                            <td>Ana Luíza</td> <!-- Cria uma célula dentro da linha <tr> -->
+                            <td>(75) 9999-9999</td>
+                            <td>anal@gmail.com</td>
+                        </tr>
+                            <tr>
+                                <td>Paul Menez</td>
+                                <td>(71) 8888-8888</td>
+                                <td>pal@gmail.com</td>
+                            </tr>
+                                <tr>
+                                    <td>Miakuda TAco</td>
+                                    <td>(41) 7777-7777</td>
+                                    <td>miaku@gmail.com</td>
+                                </tr>
+                    </tbody>
+                </thead>
+            </thead>
+        </table>
+</body>
+</html>
+
+<h2>
+    Tabela de Profissões
+</h2>
+
+    <table border="1" width="400px" class="tabela2">
+        <tr class="linha-tabela2">
+            <td>Cargo</td>
+            <td>Salário</td>
+            <td>Qualificação</td>
+        </tr>
+            <tr>
+                <td>Desenvolvedor de Jogos</td>
+                <td>R$ 7.000</td>
+                <td>Nível Basico</td>
+            </tr>
+                <tr>
+                    <td>Engenheiro Civil</td>
+                    <td>R$ 11.296</td>
+                    <td>Nível Superior</td>
+                </tr>
+                    <tr>
+                        <td>Téc em Mecânica</td>
+                        <td>R$ 2.800</td>
+                        <td>Nível Técnico</td>
+                    </tr>
+    </table>
+
+    <h2>
+        Tabela de Funcionários
+    </h2>
+    
+        <table border="1" width="500px" class="tabela3">
+            <tr> <!-- Colspan serve para mesclar as linhas-->
+            <th colspan="4"class="linha-tabela3" >Tabela de Cargos </th>
+             </tr>
+            <tr class="cabtab3">
+                <td align="center">Nome</td>
+                <td align="center">Cargo</td>
+                <td align="center">Empresa</td>
+                <td align="center">Status</td>
+            </tr>
+                <tr>
+                    <td>Maria José</td>
+                    <td align="center">Ass. Administrativo</td>
+                    <td align="center">VIPAL</td>
+                    <td align="center"><button>Cadastrar</button></td>
+                </tr>
+                    <tr>
+                        <td>Pedro Noa</td>
+                        <td align="center">Advogado</td>
+                        <td align="center">VIVARA</td>
+                        <td align="center"><button>Cadastrar</button></td>
+                    </tr>
+                        <tr>
+                            <td>Sergio Malandro</td>
+                            <td align="center">Cozinheiro</td>
+                            <td align="center">Cookie Piska</td>
+                            <td align="center"><button>Cadastrar</button></td>
+                        </tr>
+        </table>
