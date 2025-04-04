@@ -1,0 +1,120 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+
+}
+
+.meio{
+    width: 100%;
+    text-align: center;
+    padding: 50px;
+
+  }
+
+  .p1{
+    font-size: 55px;
+    font-weight: bold;
+  }
+
+  .p2{
+    font-size: 25px;
+  }
+
+  .p3{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .p4{
+    font-size: 15px;
+  }
+
+
+
+  .saiba{
+    width: 150px;
+    height: 50px;
+    color: white;
+    border: none;
+    background-color: rgb(0, 85, 255);
+    margin-top: 20px;
+    cursor:pointer;
+  }
+
+  .conteiner{
+
+    width: 100%;
+    border: none;
+    display: flex;
+    /*Alinhamento Vertical*/
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.item{
+    width: 550px;
+    height: auto;
+    border: none;
+    background-color: rgb(127, 154, 250);
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    padding: 20px; 
+}
+
+  header{
+
+    background-color: rgb(162, 162, 162);;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 40px;
+    font-size: 20px;
+}
+
+.logo{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+nav{
+    background-color: rgb(162, 162, 162);;
+}
+
+ul li {
+    
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    list-style: none;
+    display: inline;
+    
+}
+
+ul {
+    
+    list-style: none;
+    width: 100%;
+    
+}
+
+a{
+    
+    color: black;
+    text-decoration: none;
+}
+
+  footer{
+    background-color:  #2d2d2d;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    bottom: 0;
+    color: white;
+}
