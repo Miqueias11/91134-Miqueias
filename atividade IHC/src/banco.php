@@ -17,6 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Captura os dados do formulário
     $nome = $_POST["nome"];
     $email = $_POST["email"];
+    $interesses = isset($_POST['interesses']) ? json_decode($_POST['interesses']) : [];
 
     // Inserir o usuário na tabela 'usuarios'
     $stmt = $conn->prepare("INSERT INTO usuarios (nome, email) VALUES (?, ?)");
@@ -28,9 +29,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $id_usuario = $conn->insert_id;
 
         // Verificar se o usuário escolheu alguma área de interesse
-        if (isset($_POST['interesses'])) {
+        if (!empty($interesses)) {
             // Inserir as áreas de interesse do usuário na tabela 'usuario_interesse'
-            foreach ($_POST['interesses'] as $id_interesse) {
+            foreach ($interesses as $id_interesse) {
                 // Verifica se o id_interesse é válido (para evitar problemas com valores não esperados)
                 $id_interesse = (int)$id_interesse;
 
