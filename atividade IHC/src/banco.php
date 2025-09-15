@@ -2,7 +2,7 @@
 $host = 'localhost';
 $usuario = 'root';
 $senha = '';
-$banco = 'meu_banco'; // Substitua pelo nome do seu banco
+$banco = 'cadastros'; // Substitua pelo nome do seu banco
 
 // Criando a conexão com o banco de dados
 $conn = new mysqli($host, $usuario, $senha, $banco);
@@ -14,6 +14,7 @@ if ($conn->connect_error) {
 
 // Verificando se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Captura os dados do formulário
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
@@ -28,11 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verificar se o usuário escolheu alguma área de interesse
         if (isset($_POST['interesses'])) {
-            // Inserir as áreas de interesse do usuário
+            // Inserir as áreas de interesse do usuário na tabela 'usuario_interesse'
             foreach ($_POST['interesses'] as $id_interesse) {
-                $stmt_interesse = $conn->prepare("INSERT INTO usuario_interesse (id_usuario, id_interesse) VALUES (?, ?)");
-                $stmt_interesse->bind_param("ii", $id_usuario, $id_interesse);
-                $stmt_interesse->execute();
+                // Verifica se o id_interesse é válido (para evitar problemas com valores não esperados)
+                $id_interesse = (int)$id_interesse;
+
+                if ($id_interesse > 0) {
+                    // Prepara e executa a inserção de cada interesse
+                    $stmt_interesse = $conn->prepare("INSERT INTO usuario_interesse (id_usuario, id_interesse) VALUES (?, ?)");
+                    $stmt_interesse->bind_param("ii", $id_usuario, $id_interesse);
+                    $stmt_interesse->execute();
+                }
             }
             echo "Usuário e áreas de interesse cadastrados com sucesso!";
         } else {
